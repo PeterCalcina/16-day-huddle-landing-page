@@ -1,0 +1,254 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+
+/* ----- Variables ----- */
+:root {
+  /* Colores primarios */
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+  --dark-pink: hsl(322, 97%, 65%);
+  --white: hsl(0, 0%, 100%);
+  /* Tipografia */
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+  /* Fuentes */
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding-inline: 80px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-regular);
+  color: var(--white);
+  background: url('../images/bg-desktop.svg') no-repeat center center fixed var(--violet);
+  background-size: contain;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+header img {
+  width: 200px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  width: 100%;
+  height: calc(100% - 140px);
+}
+
+.container .mockups {
+  width: 100%;
+  height: 500px;
+}
+
+.container .mockups img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.container .introduction .title {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-weight: var(--font-weight-bold);
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+.container .introduction .description {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.container .introduction .btn_register {
+  width: 180px;
+  height: 50px;
+  font-size: 18px;
+  font-family: var(--heading-font);
+  color: var(--violet);
+  background-color: var(--white);
+  border: none;
+  border-radius: 25px;
+  box-shadow: 1px 3px 7px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container .introduction .btn_register:hover {
+  color: var(--white);
+  background-color: var(--soft-magenta);
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+}
+
+footer ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+footer ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+footer ul li a:hover {
+  border-color: var(--dark-pink);
+  color: var(--dark-pink);
+}
+
+@media (width < 476px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100vh;
+    padding: 30px 40px;
+
+    background: url('../images/bg-mobile.svg') no-repeat top center fixed var(--violet);
+    background-size: contain;
+  }
+
+  header {
+    margin-bottom: 0;
+  }
+
+  header img {
+    width: 150px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .container .mockups {
+    width: 100%;
+    height: 240px;
+  }
+
+  .container .mockups img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .container .introduction {
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding-top: 20px;
+  }
+
+  .container .introduction .title {
+    font-size: 30px;
+  }
+
+  .container .introduction .description {
+    font-size: 17.5px;
+  }
+
+  .container .introduction .btn_register {
+    width: 230px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  footer {
+    justify-content: center;
+  }
+}
+
+@media (width < 376px) {
+  body {
+    height: auto;
+    padding: 30px 40px;
+  }
+
+  header img {
+    width: 120px;
+  }
+
+  .container .mockups {
+    height: 220px;
+  }
+
+  .container .introduction {
+    padding-top: 40px;
+    gap: 15px;
+  }
+
+  .container .introduction .title {
+    font-size: 25px;
+  }
+
+  .container .introduction .description {
+    font-size: 15.5px;
+  }
+
+  .container .introduction .btn_register {
+    width: 210px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
