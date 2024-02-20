@@ -64,7 +64,8 @@ header img {
 
 .container {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 55% 45%;
+  gap: 40px;
   width: 100%;
   height: calc(100% - 140px);
 }
@@ -75,9 +76,9 @@ header img {
 }
 
 .container .mockups img {
-  width: 90%;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .container .introduction {
